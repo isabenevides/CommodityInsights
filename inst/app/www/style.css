@@ -1,0 +1,5 @@
+/* style.css - clean / modern */
+body { background: #ffffff; color: #222; font-family: "Inter", "Helvetica Neue", Arial, sans-serif; }
+.navbar { box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+.card { border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); padding: 12px; }
+.kpi { font-size: 18px; font-weight: 600; color: #0d6efd; }

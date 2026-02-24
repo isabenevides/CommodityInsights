@@ -1,0 +1,19 @@
+Package: commodityInsights
+Title: Commodity Insights Dashboard
+Version: 0.0.0.9000
+Authors@R: 
+    person("Isabella", "Benevides", , "isabenevidessampaio@email.com", role = c("aut", "cre"))
+Description: App para análise de commodities com dados públicos.
+License: MIT
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    shiny,
+    golem,
+    dplyr,
+    ggplot2,
+    tidyr,
+    lubridate,
+    httr,
+    jsonlite
