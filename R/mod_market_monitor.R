@@ -91,6 +91,48 @@ mod_market_monitor_server <- function(id) {
       )
     })
 
+    output$kpi_weekly <- renderUI({
+      kpi <- kpi_data()
+
+        color <- ifelse(kpi$weekly > 0, "green", "red")
+
+        div(
+          style="background:white;padding:20px;border-radius:12px;
+                 box-shadow:0 4px 12px rgba(0,0,0,0.08);",
+
+          h6("Weekly Change", style="color:gray"),
+          h2(style=paste0("color:",color),
+            paste0(kpi$weekly,"%"))
+     )
+  })
+    
+    output$kpi_monthly <- renderUI({
+      kpi <- kpi_data()
+
+        color <- ifelse(kpi$monthly > 0, "green", "red")
+
+        div(
+          style="background:white;padding:20px;border-radius:12px;
+                 box-shadow:0 4px 12px rgba(0,0,0,0.08);",
+
+          h6("Monthly Change", style="color:gray"),
+          h2(style=paste0("color:",color),
+            paste0(kpi$monthly,"%"))
+     )
+  })
+    
+   output$kpi_vol <- renderUI ({
+     kpi <- kpi_data()
+
+     div(
+      style= "background:white;padding:20px;border-radius:12px;
+        box_shadow:0 4px 12px rgba(0, 0, 0, 0.08);",
+
+      h6("Volatility (30d)", style="color:gray;"),
+      h2(paste0(kpi$vol, "%"))
+     )
+   })
+    
     prices <- reactive({
       req(market(), product())
       fetch_prices(market(), product())
