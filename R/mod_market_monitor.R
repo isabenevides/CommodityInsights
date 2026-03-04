@@ -45,19 +45,8 @@ mod_market_monitor_server <- function(id) {
       market = market
     )
     
-    output$price_table <- DT::renderDataTable({
-      df <- prices()
-
-      df$date <- as.Date(df$date, origin = "1900-01-01")
-      df$date <- format(df$date, "%Y-%m-%d")
+    mod_price_table_server("price_table", prices)
     
-      DT::datatable(
-        df,
-        options = list(pageLength = 10),
-        rownames = FALSE
-      )
-    })
-
     kpi_data <- reactive({
       df <- prices()
 
