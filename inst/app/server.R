@@ -9,7 +9,7 @@ app_server <- function(input, output, session){
   #market/product selector module: vamos retornar reactive
   sel_r <- mod_market_jounal_server("ms1", products_list = products_list)
   #prduct_selector UI estava integrado no market_selector, se usar um separeate module chamar aqui
-
+  
 
   #selected product reactive 
   
@@ -24,6 +24,7 @@ app_server <- function(input, output, session){
     req(selected_product_r())
     fetch_prices(selected_product_r(), from = Sys.Date() - months(6), to = Sys.Date())
   })
+
 
   #connect modules with listeners
   mod_price_chart_server("pc1", selected_product_r)
